@@ -1,20 +1,28 @@
-new_employees = {
-    'accountant': 'Alice',
-    'janitor': None,
-    'developer': 'Bob',
-    'manager': object()
-}
+class A:
+
+    def __init__(self):
+        print('A')
 
 
-def filter_employees(employees):
-    x = {}
-    for i in employees:
-        if employees[i] == None:
-            continue
-        if type(employees[i]) != str:
-            continue
-        x[i] = employees[i]
-    return x
+class B(A):
+
+    def __init__(self):
+        print('B')
+        super(B, self).__init__()
 
 
-print(filter_employees(new_employees))
+class C(A):
+
+    def __init__(self):
+        print('C')
+        super(C, self).__init__()
+
+
+class D(B, C):
+
+    def __init__(self):
+        print('D')
+        super(D, self).__init__()
+
+
+D()

@@ -1,5 +1,9 @@
-fruits = ['Apples', 'Oranges', 'Bananas', 'Strawberries', 'Raspberries']
 
-for i in range(len(fruits)):
-    if str('rr') in fruits[i]:
-        raise Exception('rr in fruits!')
+
+class Bank:
+
+    def __init__(self):
+        self.money = 0
+
+    def deposit(self, money):
+        self.money += money

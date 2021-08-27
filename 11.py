@@ -1,29 +1,12 @@
-class A:
-
-    def __init__(self):
-        print('A')
-        super(A, self).__init__()
+import requests
 
 
-class B(A):
-
-    def __init__(self):
-        print('B')
-        super(B, self).__init__()
+def get_todo_item(item_id):
+    return requests.get(f'https://jsonplaceholder.typicode.com/todos/{item_id}').json()
 
 
-class C:
-
-    def __init__(self):
-        print('C')
-        super(C, self).__init__()
+def get_first_todo_item():
+    return get_todo_item(1)
 
 
-class D(B, C):
-
-    def __init__(self):
-        print('D')
-        super(D, self).__init__()
-
-
-D()
+print(get_first_todo_item())
